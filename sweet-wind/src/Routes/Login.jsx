@@ -62,22 +62,20 @@ function Login() {
 
   return (
     <div>
-  
       {success && (
-        <Alert status='success'>
-        <AlertIcon />
-        Login Successful
-      </Alert>
-}
+        <Alert status="error">
+          <AlertIcon />
+          Login Successfull
+        </Alert>
+      )}
+      {error && (
+        <Alert status="error">
+          <AlertIcon />
+          Missing email or password
+        </Alert>
+      )}
 
-{error &&
-  <Alert status='error'>
-    <AlertIcon />
-    There was an error processing your request
-  </Alert>
-}
-
-<Container>
+      <Container>
         <Center>
           <Stack spacing={50}>
             <Box>
