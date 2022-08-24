@@ -10,6 +10,7 @@ import {
   FormControl,
   FormHelperText,
   HStack,
+  Image,
   Input,
   InputGroup,
   InputRightElement,
@@ -75,22 +76,23 @@ function Login() {
         </Alert>
       )}
 
-      <Container>
+      <Container className="LoginBorder">
         <Center>
-          <Stack spacing={50}>
+          <Stack spacing={10}>
             <Box>
               <Text fontSize={"4xl"}>Welcome Back</Text>
               <Text fontSize={"1xl"}>Please sign in below to get started</Text>
             </Box>
             <FormControl>
               <Input
+                size="lg"
                 onChange={handleChange}
                 name="email"
                 value={details.email}
                 type="email"
                 placeholder="Email Address"
               />
-              <InputGroup size="md">
+              <InputGroup size="lg">
                 <Input
                   onChange={handleChange}
                   name="password"
@@ -110,9 +112,17 @@ function Login() {
               </FormHelperText>
             </FormControl>
             <Box>
-              <Button onClick={handleSubmit} bg="#1bc98e" color={"#FFFFFF"}>
-                Continue
-              </Button>
+              <Stack>
+                <Button
+                  borderRadius={100}
+                  size="lg"
+                  onClick={handleSubmit}
+                  bg="#1bc98e"
+                  color={"#FFFFFF"}
+                >
+                  Continue
+                </Button>
+              </Stack>
             </Box>
             <Flex>
               <Divider orientation="horizontal" />
@@ -120,19 +130,20 @@ function Login() {
               <Divider orientation="horizontal" />
             </Flex>
             <Stack>
-              <Button bg={"black"} color="white">
+              <Button borderRadius={100} bg={"black"} color="white">
                 Continue With Apple
               </Button>
-              <Button bg={"#3b77b1"} color="white">
+              <Button borderRadius={100} bg={"#3b77b1"} color="white">
                 Continue With Google
               </Button>
+              <Text>
+                Don't have an account?
+                <Link style={{ color: "#1CA677" }} to="/join">
+                  Sign up here
+                </Link>
+              </Text>
             </Stack>
-            <Text>
-              Don't have an account?
-              <Link color="red" to="/join">
-                Sign up here
-              </Link>
-            </Text>
+
             <Text fontSize={"xs"}>
               This site is protected by hCaptcha and their <br /> privacy policy
               and terms apply.
