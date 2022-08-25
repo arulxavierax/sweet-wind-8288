@@ -1,11 +1,16 @@
-import React from "react";
 import axios from "axios";
 
-function login(data) {
+export const userLogin = (data) => {
   return axios.post("https://reqres.in/api/login", {
     email: data.email,
     password: data.password,
   });
-}
+};
 
-export default login;
+export const userRegister = (data) => {
+  return axios.post("https://reqres.in/api/register", {
+    name: data.name,
+    email: data.email,
+    password: data.password,
+  });
+};

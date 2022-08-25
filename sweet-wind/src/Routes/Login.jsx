@@ -21,7 +21,7 @@ import React from "react";
 import { useContext } from "react";
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import login from "../api/api";
+import { userLogin } from "../api/api";
 import { AppContext } from "../Contex/AppContext";
 
 function Login() {
@@ -45,14 +45,15 @@ function Login() {
   };
 
   const handleSubmit = () => {
-    login(details)
+    userLogin(details)
       .then((res) => {
         console.log(res.data);
         setSuccess(true);
+        setError(false);
         loginUser();
       })
       .catch((err) => {
-        console.log(err.response.data);
+        setSuccess(false);
         setError(true);
       });
   };
@@ -62,9 +63,9 @@ function Login() {
   }
 
   return (
-    <div>
+    <div style={{marginTop:'50px'}}>
       {success && (
-        <Alert status="error">
+        <Alert status="success">
           <AlertIcon />
           Login Successfull
         </Alert>
@@ -84,32 +85,34 @@ function Login() {
               <Text fontSize={"1xl"}>Please sign in below to get started</Text>
             </Box>
             <FormControl>
-              <Input
-                size="lg"
-                onChange={handleChange}
-                name="email"
-                value={details.email}
-                type="email"
-                placeholder="Email Address"
-              />
-              <InputGroup size="lg">
+              <Stack spacing={5}>
                 <Input
+                  size="lg"
                   onChange={handleChange}
-                  name="password"
-                  value={details.password}
-                  pr="4.5rem"
-                  type={show ? "text" : "password"}
-                  placeholder="Enter password"
+                  name="email"
+                  value={details.email}
+                  type="email"
+                  placeholder="Email Address"
                 />
-                <InputRightElement width="4.5rem">
-                  <Button h="1.75rem" size="sm" onClick={handleClick}>
-                    {show ? "Hide" : "Show"}
-                  </Button>
-                </InputRightElement>
-              </InputGroup>
-              <FormHelperText color="#1bc98e">
-                forget your password?
-              </FormHelperText>
+                <InputGroup size="lg">
+                  <Input
+                    onChange={handleChange}
+                    name="password"
+                    value={details.password}
+                    pr="4.5rem"
+                    type={show ? "text" : "password"}
+                    placeholder="Enter password"
+                  />
+                  <InputRightElement width="4.5rem">
+                    <Button h="1.75rem" size="sm" onClick={handleClick}>
+                      {show ? "Hide" : "Show"}
+                    </Button>
+                  </InputRightElement>
+                </InputGroup>
+                <FormHelperText color="#1bc98e">
+                  forget your password?
+                </FormHelperText>
+              </Stack>
             </FormControl>
             <Box>
               <Stack>

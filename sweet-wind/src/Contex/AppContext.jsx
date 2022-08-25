@@ -8,8 +8,11 @@ function AppContextProvider({ children }) {
   const loginUser = () => {
     setIsAuth(true);
   };
+  const logoutUser=()=>{
+    setIsAuth(false)
+  }
   return (
-    <AppContext.Provider value={{ isAuth, loginUser }}>
+    <AppContext.Provider value={{ isAuth, loginUser,logoutUser }}>
       {children}
     </AppContext.Provider>
   );
