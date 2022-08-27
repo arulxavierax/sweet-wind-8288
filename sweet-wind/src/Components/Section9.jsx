@@ -1,21 +1,24 @@
 import { Box, Button, Heading, Text } from "@chakra-ui/react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Section9() {
   return (
-    <div style={{ backgroundColor: "#1ca677" , padding:"70px" }}>
+    <div style={{ backgroundColor: "#1ca677", padding: "70px" }}>
       <div>
         <Box>
-          <Heading color={'white'} >Looking for Premium?</Heading>
+          <Heading color={"white"}>Looking for Premium?</Heading>
         </Box>
         <Box margin={5}>
-          <Text color={'white'} >
+          <Text color={"white"}>
             Unlock all of Carb Manager's cutting-edge features with a Premium
             Membership.
           </Text>
         </Box>
         <Box>
-          <Button borderRadius={50} color={'white'} bg="#F94642" >Get Premium</Button>
+          <Button borderRadius={50} color={"white"} bg="#F94642">
+            <Link to={"/premium"}>Get Premium</Link>
+          </Button>
         </Box>
       </div>
     </div>

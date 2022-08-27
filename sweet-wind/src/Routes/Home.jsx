@@ -25,6 +25,7 @@ import Section6 from "../Components/Section6";
 import Section7 from "../Components/Section7";
 import Section8 from "../Components/Section8";
 import Section9 from "../Components/Section9";
+import Footer from "../Components/Footer";
 
 function Home() {
   const bgColor = {
@@ -361,6 +362,11 @@ function Home() {
       <div style={{ margin: "200px 0px 200px 0px" }}>
         <Section9 />
       </div>
+
+      <div style={{ margin: "200px 0px 20px 0px" }}>
+        <Footer />
+      </div>
+
     </div>
   );
 }
