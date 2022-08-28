@@ -18,7 +18,7 @@ function Footer() {
           color={"#333333"}
           fontWeight={"bold"}
           justify={"space-between"}
-          width="50%"
+          width="60%"
           margin={"auto"}
         >
           <Box>
@@ -61,7 +61,7 @@ function Footer() {
         <Flex
           color={"#6f737a"}
           justify={"space-between"}
-          width="40%"
+          width="50%"
           margin={"auto"}
         >
           <Box>

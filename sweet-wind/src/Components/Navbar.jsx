@@ -64,7 +64,7 @@ function Navbar() {
       </div>
       <div
         style={{
-          width: "12%",
+          width: "20%",
           display: "flex",
           justifyContent: "space-between",
         }}
